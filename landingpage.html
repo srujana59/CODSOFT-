@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coming Soon - Event</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <style>
+        body {
+            overflow-y: auto;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .technova-logo {
+            display: block;
+            margin: 0 auto;
+        }
+        .event-title {
+            text-align: center;
+            margin-top: -120px; /* Further reduced margin for closer spacing */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TECHNOVA Logo as Heading -->
+    <header>
+        <img src="C:\Users\sruja\Downloads\2-removebg-preview.png" alt="TECHNOVA Logo" class="technova-logo" height="400" width="300">
+    </header>
+    <h1 class="event-title"><i>A National Level Symposium for Women</i></h1>
+
+    <!-- Countdown Timer Section (Without Container) -->
+    <div id="countdown">
+        <div id="days">00d</div>
+        <div id="hours">00h</div>
+        <div id="minutes">00m</div>
+        <div id="seconds">00s</div>
+    </div>
+
+    <!-- Main Content -->
+    <h5 style="color: rgb(245, 240, 240);">Stay tuned for updates and get exclusive early access.</h5>
+
+    <section>
+        <!-- Email Signup Form -->
+        <form action="#" method="POST" class="signup-form" onsubmit="alert('Successfully subscribed for updates!'); return false;">
+            <input type="email" name="email" placeholder="Enter your email for updates" required>
+            <button type="submit">Notify Me</button>
+        </form>
+    </section>
+
+    <h5 style="color: rgb(245, 240, 240);">Follow our pages to get more information</h5>
+
+    <div class="social-media">
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">Instagram</a>
+    </div>
+
+    <!-- Footer (Fixed at Bottom) -->
+    <footer>
+        <p>&copy; 2025 TECHNOVA. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        var countDownDate = new Date("March 30, 2025 00:00:00").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days + "d";
+            document.getElementById("hours").innerHTML = hours + "h";
+            document.getElementById("minutes").innerHTML = minutes + "m";
+            document.getElementById("seconds").innerHTML = seconds + "s";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Event Started!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
